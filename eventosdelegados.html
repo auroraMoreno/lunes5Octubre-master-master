@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        //Agregar eventos al iniciar la pagina usar window.onload: 
+        window.onload = function () {
+            //Aquí aosciamos todo...
+            var boton = document.getElementById("botonAccion");
+            boton.addEventListener("click", function () {
+                alert("Mensaje cargado...");
+            })
+        }
+
+
+        //Crear var global para incrementar su valor cada vez que asociemos el evento
+        //Para ver el número de asociaciones y el numero de mensajes que mostremos
+        //Diferenciará el onclick del listener(segundo botón)
+        var contador = 0;
+        function asociarEvento() {
+            contador++;
+            var res = document.getElementById("resultado");
+            res.innerText = "Eventos asociados: " + contador;
+            //Buscamos botón para delegar el evento
+            var boton = document.getElementById("botonAccion");
+            //Empezamos con onclick y funciones externas: 
+            //No hay pila de llamadas, se queda con la última acción
+            //this devuelve el botón asociado.
+            //boton.onclick = mostrarMensaje;
+            //boton.onclick = mostarMensaje2; //ejecuta lo último que se ponga, no hay pila de llamadas. 
+
+            //Parte 2: usar onclick con funciones anonimas. 
+            //No hay diferencia entre externas o anónimas. 
+            //boton.onclick = function () {
+            //    alert("Anonima 1");
+
+            //}
+            //boton.onclick = function () {
+            //    alert("Anonima 2" + this);
+            //}
+
+            //Listener con funciones externas
+            //Con una funcion declarativa solo lo hace una vez ya que el nombre le dice que ya la ha hecho. 
+            //boton.addEventListener("click", mostrarMensaje);
+            //con dos o mas funciones hace pila de llamada el listener
+            //si son funciones diferentes, existe pila de llamada
+            //boton.addEventListener("click", mostarMensaje2);
+
+            //Listener con funciones anonimas: 
+            //Hace pila de llamadas 
+            //No tiene nombre entonces son funciones diferentes por eso va a hacer pila de llamadas. 
+            boton.addEventListener("click", function () {
+                alert("Anónima 1: " + this);
+            });
+
+
+            //Con funciones anonimas hay pila de llamadas en todo momento bc no tienen nombre 
+            //this: Boton
+            
+        }
+
+        function mostrarMensaje() {
+            alert("Mensaje 1 " + this);
+        }
+
+        function mostarMensaje2() {
+            alert("Mensaje 2");
+        }
+    </script>
+</head>
+<body>
+    <h1>Eventos delegados JS</h1>
+    <h1 id="resultado"></h1>
+    <button type="button" onclick="asociarEvento()">Asociar eventos</button>
+    <button type="button" id="botonAccion">Realizar Acciones</button>
+</body>
+</html>

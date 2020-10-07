@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function multiplicar() {
+            var caja = document.getElementById("numero");
+            var numero = parseInt(caja.value);
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = "";
+            for (i = 1; i <= 10; i++) {
+                resultado.innerHTML += "<table border=1><tr><td>" + numero + " x " + i + "= </td><td>" + numero * i + "</td></tr></table>";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <label>Número a multiplicar</label>
+    <input type="number" id="numero" />
+    <button type="button" onclick="multiplicar()">Multiplicar</button>
+    <div id="resultado">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function calcularLetra() {
+            var cajadni = document.getElementById("dni");
+            var dni = parseInt(cajadni.value);
+            var resultado = document.getElementById("resultado");
+            //if (dni.lenght > 0) {
+                var operacion = dni - (dni * (dni / 23) * 23);
+                if (operacion >= 0) {
+                    resultado.innerHTML = "La letra del DNI es: T"
+                } else if (operacion >= 1) {
+                    resultado.innerHTML = "La letra del DNI es: R";
+                } else if (operacion >= 2) {
+                    resultado.innerHTML = "La letra del DNI es: W";
+                } else if (operacion >= 3) {
+                    resultado.innerHTML = "La letra del DNI es: A";
+                } else if (operacion >= 4) {
+                    resultado.innerHTML = "La letra del DNI es: G";
+                } else if (operacion >= 5) {
+                    resultado.innerHTML = "La letra del DNI es: M";
+                } else if (operacion >= 6) {
+                    resultado.innerHTML = "La letra del DNI es: Y";
+                } else if (operacion >= 7) {
+                    resultado.innerHTML = "La letra del DNI es: F";
+                } else if (operacion >= 8) {
+                    resultado.innerHTML = "La letra del DNI es:P ";
+                } else if (operacion >= 9) {
+                    resultado.innerHTML = "La letra del DNI es: D";
+                } else if (operacion >= 10) {
+                    resultado.innerHTML = "La letra del DNI es:X ";
+                }
+                else if (operacion >= 11) {
+                    resultado.innerHTML = "La letra del DNI es: B";
+                }
+                else if (operacion >= 12) {
+                    resultado.innerHTML = "La letra del DNI es: N";
+                }
+                else if (operacion >= 13) {
+                    resultado.innerHTML = "La letra del DNI es: J ";
+                } else if (operacion >= 14) {
+                    resultado.innerHTML = "La letra del DNI es: Z ";
+                } else if (operacion >= 15) {
+                    resultado.innerHTML = "La letra del DNI es: S ";
+                } else if (operacion >= 16) {
+                    resultado.innerHTML = "La letra del DNI es: Q";
+                } else if (operacion >= 17) {
+                    resultado.innerHTML = "La letra del DNI es: V";
+                } else if (operacion >= 18) {
+                    resultado.innerHTML= "La letra del DNI es: H";
+                } else if (operacion >= 19) {
+                    resultado.innerHTML = "La letra del DNI es: L";
+                } else if (operacion >= 20) {
+                    resultado.innerHTML = "La letra del DNI es:C ";
+                } else if (operacion >= 21) {
+                    resultado.innerHTML = "La letra del DNI es:K ";
+                } else if (operacion >= 22) {
+                    resultado.innerHTML = "La letra del DNI es: E";
+                } else if (operacion >= 23) {
+                    resultado.innerHTML = "La letra del DNI es: T";
+                }
+            //}
+        }
+    </script>
+</head>
+<body>
+    <label>Numero DNI</label>
+    <input type="number" id="dni"/>
+    <button type="button" onclick="calcularLetra">Calcular </button>
+    <h3 id="resultado"></h3>
+</body>
+</html>

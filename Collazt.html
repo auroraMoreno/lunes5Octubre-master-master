@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function calcular() {
+            var resultado = document.getElementById("resultado");
+            var caja = document.getElementById("numero");
+            var numero = parseInt(caja.value);
+            resultado.innerHTML = ""; //limpia el elemento.
+            if (numero < 0) {
+                resultado.innerHTML = "Numero debe ser positivo";
+            } else {
+                while (numero != 1) {
+                    if (numero % 2 == 0) {
+                        numero = numero / 2;
+                    } else {
+                        numero = numero * 3 + 1;
+                    }
+                    resultado.innerHTML += numero + ",";
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <label>Número</label>
+    <input type="number" id="numero" />
+    <button type="button" onclick="calcular()">Calcular</button>
+    <h5 id="resultado"></h5>
+</body>
+</html>

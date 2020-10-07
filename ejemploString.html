@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function ejecutar() {
+            var texto = "VISUAL STUDIO .NET";
+            var html = ""; 
+            html += "length: " + texto.length;
+            html += "<br/>";
+            html += "toLowerCase(): " + texto.toLowerCase();
+            html += "<br/>";
+            html += "indexOf('U'): " + texto.indexOf("U");
+            html += "<br/>";
+            html += "lastIndexOf('U'): " + texto.lastIndexOf("U");
+            html += "<br/>";
+            html += "charAt(9): " + texto.charAt(9);
+            html += "<br/>";
+            html += "substr(2,3): " + texto.substr(2, 3);
+            html += "<br/>";
+            html += "substring(2,3): " + texto.substring(2, 3);
+            html += "<br/>";
+            html += "startsWith('V'): " + texto.startsWith("V");
+            html += "<br/>";
+            html += "endsWith('T'): " + texto.endsWith("T");
+            var resultado = document.getElementById("resultado");
+            resultado.innerHTML = html;
+        }
+    </script>
+</head>
+<body>
+    <h1>Métodos clase string</h1>
+    <h2>VISUAL STUDIO .NET</h2>
+    <button type="button" onclick="ejecutar()">Ejecutar</button>
+    <div id="resultado"></div>
+</body>
+</html>

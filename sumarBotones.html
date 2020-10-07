@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var contador = 0;
+         window.onload = function () {
+             //Aquí aosciamos todo...
+             var boton = document.getElementsById("btn1");
+             var res = document.getElementById("resultado");
+             //al hacerlo con funciones anónima habría que hacer 1 funcion por cada boton;
+             boton.addEventListener("click", function () { //aquí asociar los botones a una función externa;
+                 var operacion = parseInt(boton.value);
+                 contador += operacion;
+                 res.innerText = "Resultado " + contador;
+
+            })
+        }
+    </script>
+</head>
+<body>
+    <button type="button" id="btn1" value="19">19</button>
+    <button type="button" id="btn2" value="3">3</button>
+    <button type="button" id="btn3" value="14">14</button>
+    <button type="button" id="btn4" value="2">2</button>
+    <h5 id="resultado"></h5>
+</body>
+</html>

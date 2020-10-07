@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var suma = 0; //tiene que ponerse fuera para que la funcion load y la addeventlistener la puedan compartir
+        //porque las funciones addevent se consideran funciones externas. 
+        //window.addEventListener("load", funciton(){}); lo mismo que bajo 
+        window.onload = function () {
+            //Capturamos todos los objetos que tengan el mismo name
+            var botones = document.getElementsByName("boton");
+
+            //Recorremos todos los botnes con referencia
+            //En js existen dos bucles por referencia
+            //for..in  indice
+              for (var indice in botones) {
+                console.log("Indice: " + indice);
+                var boton = botones[indice];
+            }
+
+            //for...of objetos
+            for (var boton of botones) {
+                console.log(boton.innerText);
+            }
+          
+
+
+
+            //Podemos buscar elementos por us itpo html:
+            //var botones = document.getElementsByTagName("button");
+
+            
+
+            //botones[0] contiene el número 8 (abajo)
+            //Recorrer con bucle los botones
+            //for (var i = 0; i < botones.length; i++) {
+            //    //Extraer cada boton de cada posición del array
+            //    var boton = botones[i]; //Referencia
+            //    //Asociar cada botón con una acción click;
+            //    boton.addEventListener("click", function () {    //hay que pensar como si fuera una función externa
+            //    //Codigo para cuando un botón se pulse
+            //        //Recuperamos el número del texto del botón convertido a número
+            //        var num = parseInt(this.innerText); //this se refiere a boton; 
+            //        //var num = parseInt(boton.innerText); l boton no existe en ese click si no cuando carga. Mo reconoce bc boton declarado en el load
+            //        //si boton fuera global sí que se podría coger. 
+            //        suma += num;
+            //        var resultado = document.getElementById("resultado");
+            //        resultado.innerText = "La suma es " + suma;
+
+            //    });
+
+            //}
+         
+        }
+    </script>
+</head>
+<body>
+    <h1>Sumar Botones</h1>
+    <button type="button" name="boton">8</button>
+    <button type="button" name="boton">14</button>
+    <button type="button" name="boton">22</button>
+    <button type="button" name="boton">1</button>
+    <!--<button type="button" >Para hacelo con tagName</button>-->
+    <button type="button" >1</button>
+    <button type="button" >1</button>
+    <h3 id="resultado"></h3>
+</body>
+</html>

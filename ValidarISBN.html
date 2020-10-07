@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function validarIsbn() {
+            var cajaisbn = document.getElementById("isbn");
+            var isbn = cajaisbn.value;
+            var resultado = document.getElementById("resultado");
+
+            var multiplicacion = 0;
+            for (var i = 0; i < isbn.length; i++) {
+                multiplicacion = parseInt(isbn[i]) * i;
+                suma += multiplicacion;
+                resultado.innerHTML = ""
+            }
+          
+        }
+    </script>
+</head>
+<body>
+    <label>ISBN</label>
+    <input type="text" id="isbn"/>
+    <button type="button">Validar</button>
+    <h3 id="resultado" onclick="validarIsbn()"></h3>
+</body>
+</html>

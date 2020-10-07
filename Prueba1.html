@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="submit" value="Pulsar" />
+    <input type="submit" value="Mod" />
+    <input type="submit" value="Eliminar" />
+    <!-- el value ya está ocupado por el nombre del botón -->
+    <button type="submit">Insertar</button>
+    <button type="submit"></button>
+    <button type="submit"></button>
+    <!-- en el value se le puede incluir lo que se quiera -->
+    <h3>Control Datalist</h3>
+    <!--ctrl + k + c Comentar
+    ctrl + k + u Descomentar-->
+    Seleccione una opción:
+    <input type="text" list="lista" id="caja" name="caja" /> <!--Lo asocia con id a la datalist-->
+    <!--Id= único, para el front para usar con js jquery
+    Name= para el back y se puede repetir, tmb se puede usar en el front-->
+    <datalist id="lista">
+        <!--Aquí dentro solamente options con value-->
+        <option value="ana" />
+        <option value="adrian" />
+        <option value="a" />
+        <option value="aaa" />
+        <option value="abc" />
+        <option value="aeiou" />
+    </datalist>
+</body>
+</html>

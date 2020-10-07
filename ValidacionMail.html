@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function validarEmail() {
+            var cajaEmail = document.getElementById("email");
+            var email = cajaEmail.value;
+            var resultado = document.getElementById("resultado");
+
+            if (email.indexOf("@") == -1) {
+                resultado.innerHTML = "Debe contener una @";
+            }
+
+            if (email.startsWith("@")) {
+                resultado.innerHTML = "No puede empezar con un @";
+            } else if (email.endsWith("@")) {
+                resultado.innerHTML = "No puede acabar con una @";
+            }
+
+            if (email.indexOf(".") < email.indexOf("@")) {
+                resultado.innerHTML = "El punto debe ir tras la @";
+            }
+
+            if (email.lastIndexOf("@") != email.indexOf("@")) {
+                resultado.innerHTML = "Solo puede haber 1 @";
+            }
+
+            if (email.substring((email.indexOf("@"), email.indexOf("."))) < 2 && email.substring((email.indexOf("@"), email.indexOf(".") > 4))){
+                resultado.innerHTML = "El dominio debe tener entre 2 y 4 caracteres";
+            }
+
+         
+
+        }
+    </script>
+</head>
+<body>
+    <label>Email</label>
+    <input type="email" id="email" />
+    <button type="button" onclick="validarEmail()">Validar</button>
+    <h5 id="resultado"></h5>
+</body>
+</html>

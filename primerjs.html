@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function mostrarSaludo() {
+            //no nos fiamos de la ayuda de microsoft para JavaScript
+            console.log("Mensaje para la consola para desarollo");
+            console.log("Otro mensaje");
+            //alert("Soy un mensaje");
+            var numero = 14;
+            var texto = "Soy una variable"; //Tanto comillas dobles como simples
+            console.log("Numero: " + numero);
+            numero = window; //asigna el objeto ventana a la misma varibale número
+            console.log("Numero: " + numero);
+            numero.location.href = "https://ww.google.es";
+
+        }
+    </script>
+</head>
+<body>
+    <button type="button" onclick="mostrarSaludo()">Pulsar para mensaje</button>
+</body>
+</html>

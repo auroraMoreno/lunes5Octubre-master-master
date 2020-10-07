@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function sumarNumeros() {
+           //h1 pintar contenido: innerHTML muestra formato html detnro del códgio de forma dinámica, se le puede dar formato
+            //h1 innerText texto plano (solo interpreta)
+            var resultado = document.getElementById("resultado"); //recuperamos h1 por us id
+            //resultado.innerHTML = "<h5> Título pequeño </h5>";
+            //Si tenemos controles de formulario, utilizamos Value
+            var caja1 = document.getElementById("caja1");
+            var caja2 = document.getElementById("caja2");
+            //Recuperar valor de las cajas:
+            var num1 = parseInt(caja1.value); //value siempre va a ser un string
+            var num2 = parseInt(caja2.value);
+            var suma = num1 + num2;
+            resultado.innerText = suma;
+            //Dos funciones de conversión:
+            // parseInt(valor) a número, parseFLoat(valor) a decimal
+        }
+        function cambiarImagen(img) {
+            //Acceder a la imagen
+            //this en una llamada es el objeto que hace la llamada si se quiere enviar el obj
+            //var img = document.images[0];
+            img.src = "IMAGES/paisajes-naturales-26-1280x720.jpeg";
+        }
+        function evaluar() {
+            var cajaestacion = document.getElementById("cajaestacion");
+            var estacion = parseInt(cajaestacion.value);
+            var resultado = document.getElementById("resultado");
+            switch (estacion) {
+                case 1:
+                    resultado.innerText = "VERANO";
+                    break;
+                case 2:
+                    resultado.innerText = "OTOÑO";
+                    break;
+                case 3:
+                    resultado.innerText = "INVIERNO";
+                    break;
+                case 4: resultado.innerText = "PRIMAVERA";
+                    break;
+                default:
+                    resultado.innerText = "NO HAY ESTACIONES";
+            }
+            if (estacion == 1) {
+                resultado.innerText = "VERANO";
+            } else if (estacion == 2) {
+                resultado.innerText = "OTOÑO";
+            } else if (estacion == 3) {
+                resultado.innerText = "INVIERNO";
+            } else if (estacion == 4) {
+                resultado.innerText = "PRIMAVERA";
+            } else {
+                resultado.innerText = "OPCIÓN INCORRECTA";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label>Número 1-4:</label>
+    <input type="number" id="cajaestacion" />
+    <br />
+    <button type="button" onclick="evaluar()">Evaluar</button>
+    <br />
+    <img src="IMAGES/FB-paisajes-espectaculares-fjordland-new-zealand-800x419.jpg"
+         id="imagen"
+         onmouseover="cambiarImagen(this)"
+         style="width:150px; height:150px" />
+    <br />
+    <h1>Sumar números</h1>
+    <label>Número 1</label>
+    <input type="number" id="caja1" />
+    <br />
+    <label>Número 2</label>
+    <input type="number" id="caja2" />
+    <br />
+    <button type="button" onclick="sumarNumeros()">Sumar</button>
+    <br />
+    <h1 id="resultado"></h1>
+</body>
+</html>

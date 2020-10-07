@@ -7,15 +7,22 @@
         window.onload = function () {
             var imagenes = document.getElementsByName("img");
             for (var i = 0; i < imagenes.length; i++) {
-                var img = imagenes[i];
-            }
-            imagenes.
+                var imagen = imagenes[i];
+                imagen.addEventListener("mouseover", function () {
+                    imagen.src = "Imagenes/descarga.jpg";
 
+                });
+                imagen.addEventListener("mouseout", function () {
+                    imagen.src = "Imagenes/paisajes-espectaculares-del-mundo-1.jpg";
+
+                });
+            }
         }
+
+
     </script>
 </head>
 <body>
-    <img src="Imagenes/descarga.jpg" name="img" />
-    <img src="Imagenes/paisajes-espectaculares-del-mundo-1.jpg" name="img"/>
+    <img src="Imagenes/paisajes-espectaculares-del-mundo-1.jpg" name="img" style="height:150px; width:150px"/>
 </body>
 </html>

@@ -34,23 +34,23 @@
 
             //botones[0] contiene el número 8 (abajo)
             //Recorrer con bucle los botones
-            //for (var i = 0; i < botones.length; i++) {
-            //    //Extraer cada boton de cada posición del array
-            //    var boton = botones[i]; //Referencia
-            //    //Asociar cada botón con una acción click;
-            //    boton.addEventListener("click", function () {    //hay que pensar como si fuera una función externa
-            //    //Codigo para cuando un botón se pulse
-            //        //Recuperamos el número del texto del botón convertido a número
-            //        var num = parseInt(this.innerText); //this se refiere a boton; 
-            //        //var num = parseInt(boton.innerText); l boton no existe en ese click si no cuando carga. Mo reconoce bc boton declarado en el load
-            //        //si boton fuera global sí que se podría coger. 
-            //        suma += num;
-            //        var resultado = document.getElementById("resultado");
-            //        resultado.innerText = "La suma es " + suma;
+            for (var i = 0; i < botones.length; i++) {
+                //Extraer cada boton de cada posición del array
+                var boton = botones[i]; //Referencia
+                //Asociar cada botón con una acción click;
+                boton.addEventListener("click", function () {    //hay que pensar como si fuera una función externa
+                //Codigo para cuando un botón se pulse
+                    //Recuperamos el número del texto del botón convertido a número
+                    var num = parseInt(this.innerText); //this se refiere a boton; 
+                    //var num = parseInt(boton.innerText); l boton no existe en ese click si no cuando carga. Mo reconoce bc boton declarado en el load
+                    //si boton fuera global sí que se podría coger. 
+                    suma += num;
+                    var resultado = document.getElementById("resultado");
+                    resultado.innerText = "La suma es " + suma;
 
-            //    });
+                });
 
-            //}
+            }
          
         }
     </script>

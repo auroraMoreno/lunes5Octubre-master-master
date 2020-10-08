@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script type="text/javascript">
+        function mostrarSeleccionado() {
+            //capturamos el objeto select
+            var select = document.getElementById("deporte");
+            //Existe un array predefinido que es options para las selectlist
+            for (var opt of select.options) { //select es un objeto único 
+                //SI son options para saber su seleccion es con selected
+                if (opt.selected == true) {
+                    //Solo entra una vez porque no tenemos selecicon multiple
+                    var resultado = document.getElementById("resultado");
+                    //En cliente (js) podemos acceder tanto al texto visible (innertext) o al valor(value)
+                    resultado.innerText = "Valor: "
+                        + opt.value + ", Texto: " + opt.innerText;
+
+                }
+            }
+        }
+        function colorSeleccionado() {
+            //Poniendo el mismo name a controles form genera un array en el dom dinámico con el name
+            //para esto los controles tienen que estar dentro de form
+            var colores = document.forms[0].colores;
+            var html = "";
+            //var colores = document.formulario.colores; (poniendo name="formulario") sería lo mismo que arriba
+            //recorremos array de input checkbox
+            for (var chk of colores) {
+                //un input check box/radio utiliza checked para su seleccion 
+                if (chk.checked == true) {
+                    html += chk.value + ", ";
+                }
+            }
+            var resultado = document.getElementById("resultado");
+            resultado.innerText = html;
+            console.log(colores.length);
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Js Controles Forms</h1>
+    <form >
+    <label>Seleccione sus colores favoritos</label>
+    <ul>
+        <li>
+            Rosa <input type="checkbox" value="Rosa" name="colores" />
+        </li>
+        <li>
+            Verde <input type="checkbox" value="Verde" name="colores" />
+        </li>
+        <li>
+            Negro <input type="checkbox" value="Negro" name="colores" />
+        </li>
+        <li>
+           Rojo <input type="checkbox" value="Rojo" name="colores" />
+        </li>
+    </ul>
+    <button type="button" onclick="colorSeleccionado()">Mostrar colores</button>
+    <label>Deporte favorito</label>
+    <select id="deporte">
+        <option value="Petanca">Petanca</option>
+        <option value="Curling">Curling</option>
+        <option value="Futbol">Futbol</option>
+        <option value="Basket">Basket</option>
+    </select>
+    <button type="button" onclick="mostrarSeleccionado()">Mostrar deporte seleccionado</button>
+    <h4 id="resultado"></h4>
+    </form>
+</body>
+</html>

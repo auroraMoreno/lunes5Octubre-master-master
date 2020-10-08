@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var sumar = 0;
+        window.onload = function () {
+            var numeros = document.forms[0].numeros;
+            var parImpar = document.forms[0].parImpar;
+            var valuePI = parImpar.value
+            var resultado = document.getElementById("resultado");
+            //var boton = document.getElementById("sumarCajas");
+            for (var n of numeros) {
+                n.value = Math.floor(Math.random() * 20);
+                if (parImpar.checked == true && valuePI == "Odd") {
+                    numeros.value;
+                }
+
+                sumar += parseInt(n.value);
+                resultado.innerHTML = "Resultado " + sumar;
+            }
+            //coger value de los input
+
+      }     
+       
+       
+    </script>
+</head>
+<body>
+    <h1>Sumar cajas random</h1>
+    <form>
+        <label>Seleccione sus colores favoritos</label>
+        <ul>
+            <li>
+                <input type="checkbox" value="Odd" name="parImpar"/> Odd
+            </li>
+            <li>
+                <input type="checkbox" value="Even" name="parImpar" /> Even
+            </li>
+        </ul>
+        <h6 id="funciona"></h6>
+        <input type="number" id="caja1" name="numeros" />
+        <br />
+        <input type="number" id="caja2" name="numeros"/>
+        <br/>
+        <input type="number" id="caja3" name="numeros"/>
+        <br/>
+        <input type="number" id="caja4" name="numeros"/>
+        <br/>
+        <button type="button" id="sumarCajas">Sumar cajas</button>
+        <h4 id="resultado"></h4>
+    </form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        function crearCheckBox() {
+            var rango = document.getElementById("rango");
+            var valorRango = parseInt(rango.value);
+            document.getElementById("valor").innerText = valorRango;
+
+            var capa = document.getElementById("capa");
+            capa.innerText = "";
+
+            for (var i = 1; i <= valorRango; i++) {
+                var check = document.createElement("input");
+                check.setAttribute("type", "checkbox");
+                var aleat = parseInt(Math.random() * 20);
+                check.value = aleat;
+                var lbl = document.createElement("span");
+                lbl.innerText = aleat;
+                capa.appendChild(check);
+                capa.appendChild(lbl);
+
+                check.addEventListener("change", function () {
+                    var resultado = document.getElementById("resultado");
+                    var numerofinal = parseInt(resultado.innerText);
+                    var valorCheck = parseInt(this.value);
+                    if (this.chcked == true) {
+                        numero += valorCheck;
+                    } else {
+                        numerofinal -= valorCheck;
+                    }
+                    resultado.innerText = numerofinal;
+                });
+            }
+    
+            }
+         
+        
+    </script>
+</head>
+<body>
+    <h1>Generar Checkbox</h1>
+    <form>
+        <input type="range" id="rango" value="1" onchange="crearCheckBox()" min="1" max="50" /><span id="valor"></span>
+        <hr />
+        <div id="capa"></div>
+        <h4 id="resultado">0</h4>
+    </form>
+</body>
+</html>

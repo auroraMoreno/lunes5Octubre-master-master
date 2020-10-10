@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+    <script>
+        function crearObjetos() {
+            var rango = document.getElementById("rango");
+            var valor = parseInt(rango.value);
+            document.getElementById("valor").innerText = valor;
+            for (var i = 1; i <= valor; i++) {
+                //Creamos un bojetos por cada iteraión del bucle
+                var img = document.createElement("img"); //creamos objeto img con su tag html
+                //de esta forma puede tener todas sus propiedades js como img.src
+                //Asignamos propiedades
+                img.src = "Imagenes/descarga.jpg";
+                //Asignamos eventos a objeto 
+                img.addEventListener("click", function () {
+                  
+                    this.src = "Imagenes/paisajes-espectaculares-del-mundo-1.jpg";
+                    var capa = document.getElementById("capa");
+                    capa.removeChild(this); //esto quitaria la imagen 
+                    //this.remove también quitaría la imagen.
+                });
+                //Dibujar el objeto en html, dentro de un parent 
+                var capa = document.getElementById("capa");
+                capa.appendChild(img); //donde va a poner la imagen 
+
+            }
+            //comenzando le pone el source de la img y luego al pulsar cambia imagen
+            //para quitar contenido también innerText, removeChild...
+        }
+    </script>
+</head>
+<body>
+    <h1>Generar Imágenes</h1>
+    <form>
+        <input type="range" id="rango" value="1" onchange="crearObjetos()" min="1" max="50" /><span id="valor"></span>
+        <hr />
+        <div id="capa"></div>
+     
+    </form>
+</body>
+</html>

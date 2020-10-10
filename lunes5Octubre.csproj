@@ -68,12 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Bucles.html" />
+    <Content Include="calculadora.html" />
     <Content Include="cambiarImagenes.html" />
     <Content Include="Collazt.html" />
+    <Content Include="creacionCheckbox.html" />
     <Content Include="ejemplocontrolesforms.html" />
     <Content Include="ejemploString.html" />
     <Content Include="eventosdelegados.html" />
     <Content Include="generarImagenes.html" />
+    <Content Include="generarImagenesjs.html" />
     <Content Include="Imagenes\descarga.jpg" />
     <Content Include="Imagenes\paisajes-espectaculares-del-mundo-1.jpg" />
     <Content Include="LetraDNI.html" />

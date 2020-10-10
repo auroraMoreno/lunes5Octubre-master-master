@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript">
+        var primernumero;
+        var operador;
+
+        window.onload = function () {
+            var btnNumero = document.getElementsByName("botonNumero");
+            var btnOperacion = document.getElementsByName("botonOperacion");
+            var botonIgual = document.getElementById("botonIgual");
+
+            for (var btn in btnNumero) {
+                btn.addEventListener("click", function () {
+                    //evento pulsar un numero
+                    var caja = document.getElementById("caja");
+                    caja.value += this.innerText;
+
+                });
+            }
+            for (var boton of btnOperacion) {
+                boton.addEventListener("click", function () {
+                    //evento al pulsar un operacdor
+                    var caja = document.getElementById("caja");
+                    primernumero = parseInt(caja.value);
+                    operador = this.innerText;
+                    caja.value = "";
+               });
+
+            }
+
+            botonIgual.addEventListener("click", function () {
+                var caja = document.getElementById("caja");
+                var num2 = parseInt(caja.value);
+                var resultado = 0;
+                if (operador == "+") {
+                    resultado = primernumero + num2;
+                } else if (operador == "-") {
+                    resultado = primernumero - num2;
+                } else if (operador == "/") {
+                    resultado = primernumero / num2;
+                } else if (operador=="*") {
+                    resultado = primernumero * num2;
+                }
+                caja.value = resultado;
+            });
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="number" id="caja" />
+
+
+    <button name="botonNumero">1</button>
+    <button name="botonNumero">2</button>
+    <button name="botonNumero">3</button>
+    <button name="botonNumero">4</button>
+    <button name="botonNumero">5</button>
+    <button name="botonNumero">6</button>
+    <button name="botonNumero">7</button>
+    <button name="botonNumero">8</button>
+    <button name="botonNumero">9</button>
+    <button name="botonNumero">0</button>
+
+    <button name="botonOperacion"></button>
+    <button name="botonOperacion"></button>
+    <button name="botonOperacion"></button>
+
+     <button id="botonIgual"></button>
+</body>
+</html>
